@@ -18,7 +18,7 @@ class UnitTests(unittest.TestCase) :
         for i in range(10) :
             myblocks[i] = sum( myeng[i*100:(i+1)*100] ) / 100 
             myaverage = myaverage + myblocks[i] 
-        assert( vc.check_vars("average", myaverage = myaverage / 10 ) )
+        assert( vc.check_vars("average", myaverage / 10 ) )
         
     def test_error_correct(self) :
         myblocks, myaverage, mysq = 10*[0], 0, 0
@@ -29,4 +29,4 @@ class UnitTests(unittest.TestCase) :
   
         mysq, myaverage = mysq / 10, myaverage / 10
         myvar = ( 10 / 9 )*( mysq - myaverage*myaverage )
-        assert( vc.check_vars("error", np.sqrt( myvar / 10 ) )
+        assert( vc.check_vars("error", np.sqrt( myvar / 10 ) ) )
